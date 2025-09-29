@@ -42,14 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
-
                   Container(
+                  child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.blue[300],
+                      color: Colors.blue[400],
                       borderRadius: BorderRadius.circular(8),
                     ),
                     padding: EdgeInsets.all(12),
                     child: Icon(Icons.notifications, color: Colors.white),
+                  ),
                   ),
                 ],
               ),
