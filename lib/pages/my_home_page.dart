@@ -1,3 +1,4 @@
+import 'package:dashboard_design_flutter/util/emoji.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -85,8 +86,43 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 22,
                     ),
                   ),
-                  SizedBox(width: 5,),
-                  Icon(Icons.more_horiz,color: Colors.white,)
+                  SizedBox(width: 5),
+                  Icon(Icons.more_horiz, color: Colors.white),
+                ],
+              ),
+
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Emoji(emoji: "😫"),
+                      SizedBox(height: 5,),
+                      Text("Bad",style: TextStyle(color: Colors.white,fontSize: 18),),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Emoji(emoji: "😀"),
+                      SizedBox(height: 5,),
+                      Text("Happy",style: TextStyle(color: Colors.white,fontSize: 18),),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Emoji(emoji: "😭"),
+                      SizedBox(height: 5,),
+                      Text("Sad",style: TextStyle(color: Colors.white,fontSize: 18),),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Emoji(emoji: "😡"),
+                      SizedBox(height: 5,),
+                      Text("Angry",style: TextStyle(color: Colors.white,fontSize: 18),),
+                    ],
+                  ),
                 ],
               ),
             ],
