@@ -1,4 +1,5 @@
 import 'package:dashboard_design_flutter/util/emoji.dart';
+import 'package:dashboard_design_flutter/util/excercise_list_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,135 +16,204 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.blue[900],
       bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: "Cart"),
-        BottomNavigationBarItem(icon: Icon(Icons.man),label: "Profile"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Setting"),
-      ]),
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: "Cart",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.man), label: "Profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: [
-           Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 25.0),
-             child: Column(
-               children: [
-                 Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                     Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
-                           "Hi,Shimon",
-                           style: TextStyle(
-                             color: Colors.white,
-                             fontSize: 24,
-                             fontWeight: FontWeight.bold,
-                           ),
-                         ),
-                         SizedBox(height: 8),
-                         Text(
-                           "28 Sept,2025",
-                           style: TextStyle(
-                             color: Colors.blue[100],
-                             fontWeight: FontWeight.bold,
-                           ),
-                         ),
-                       ],
-                     ),
-                     Container(
-                       child: Container(
-                         decoration: BoxDecoration(
-                           color: Colors.blue[400],
-                           borderRadius: BorderRadius.circular(8),
-                         ),
-                         padding: EdgeInsets.all(12),
-                         child: Icon(Icons.notifications, color: Colors.white),
-                       ),
-                     ),
-                   ],
-                 ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Hi,Shimon",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            "28 Sept,2025",
+                            style: TextStyle(
+                              color: Colors.blue[100],
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue[400],
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: EdgeInsets.all(12),
+                          child: Icon(Icons.notifications, color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
 
-                 SizedBox(height: 20),
-                 // search bar
-                 Container(
-                   padding: EdgeInsets.all(12),
-                   decoration: BoxDecoration(
-                     color: Colors.blue[600],
-                     borderRadius: BorderRadius.circular(12),
-                   ),
-                   child: Row(
-                     children: [
-                       Icon(Icons.search, color: Colors.white),
-                       SizedBox(width: 5),
-                       Text("Search", style: TextStyle(color: Colors.white)),
-                     ],
-                   ),
-                 ),
+                  SizedBox(height: 20),
+                  // search bar
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.blue[600],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.search, color: Colors.white),
+                        SizedBox(width: 5),
+                        Text("Search", style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                  ),
 
-                 SizedBox(height: 25),
+                  SizedBox(height: 25),
 
-                 Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                     Text(
-                       "How Do You Feel Now",
-                       style: TextStyle(
-                         color: Colors.white,
-                         fontWeight: FontWeight.bold,
-                         fontSize: 22,
-                       ),
-                     ),
-                     SizedBox(width: 5),
-                     Icon(Icons.more_horiz, color: Colors.white),
-                   ],
-                 ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "How Do You Feel Now",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                        ),
+                      ),
+                      SizedBox(width: 5),
+                      Icon(Icons.more_horiz, color: Colors.white),
+                    ],
+                  ),
 
-                 SizedBox(height: 20),
-                 Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
-                     Column(
-                       children: [
-                         Emoji(emoji: "😫"),
-                         SizedBox(height: 5,),
-                         Text("Bad",style: TextStyle(color: Colors.white,fontSize: 18),),
-                       ],
-                     ),
-                     Column(
-                       children: [
-                         Emoji(emoji: "😀"),
-                         SizedBox(height: 5,),
-                         Text("Happy",style: TextStyle(color: Colors.white,fontSize: 18),),
-                       ],
-                     ),
-                     Column(
-                       children: [
-                         Emoji(emoji: "😭"),
-                         SizedBox(height: 5,),
-                         Text("Sad",style: TextStyle(color: Colors.white,fontSize: 18),),
-                       ],
-                     ),
-                     Column(
-                       children: [
-                         Emoji(emoji: "😡"),
-                         SizedBox(height: 5,),
-                         Text("Angry",style: TextStyle(color: Colors.white,fontSize: 18),),
-                       ],
-                     ),
-                   ],
-                 ),
-               ],
-             ),
-           ),
-
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          Emoji(emoji: "😫"),
+                          SizedBox(height: 5),
+                          Text(
+                            "Bad",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Emoji(emoji: "😀"),
+                          SizedBox(height: 5),
+                          Text(
+                            "Happy",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Emoji(emoji: "😭"),
+                          SizedBox(height: 5),
+                          Text(
+                            "Sad",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Emoji(emoji: "😡"),
+                          SizedBox(height: 5),
+                          Text(
+                            "Angry",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
             Expanded(
               child: Container(
-                color: Colors.white,
+                padding: EdgeInsets.all(20),
+                color: Colors.grey[300],
+                child: Center(
+                  child: Column(
+                    children: [
+                      //Row exercise
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Exercise",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                          Icon(Icons.more_horiz),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      //list os exercise
+                      Expanded(
+                        child: ListView(
+                          children: [
+                            ExcerciseListTile(
+                              icon: Icons.favorite,
+                              exerciseName: "Speaking Skills",
+                              exerciseNumber: 15,
+                              color: Colors.orange,
+                            ),
+                            ExcerciseListTile(
+                              icon: Icons.person,
+                              exerciseName: "Writing Skills",
+                              exerciseNumber: 15,
+                              color: Colors.blue,
+                            ),
+                            ExcerciseListTile(
+                              icon: Icons.star,
+                              exerciseName: "Reading Skills",
+                              exerciseNumber: 15,
+                              color: Colors.pink,
+                            ),
+                            ExcerciseListTile(
+                              icon: Icons.earbuds,
+                              exerciseName: "Listing Skills",
+                              exerciseNumber: 15,
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),
